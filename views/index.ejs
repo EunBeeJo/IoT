@@ -22,12 +22,15 @@
       <div ng-repeat="order in orders">
 
         <span style="font-size:20px; margin-left:10px;">
-          <a ng-show="order.time" href="{{order.time}}">
-            {{form.title}}
+          <a ng-show="order.time" href="#/orders/{{order._id}}">
+            {{order.time}}
           </a>
           <span ng-hide="order.time">
             {{order.time}}
           </span>
+        </span>
+        <span>
+          <a href="#/orders/{{order._id}}"> product </a>
         </span>
       </div>
     </script>
@@ -36,7 +39,7 @@
     <script type="text/ng-template" id="/orders.html">
       <div class="page-header">
         <h3>
-          <a ng-show="order.time" href="{{order.time}}">
+          <a ng-show="order.time" href="#/home">
             {{order.time}}
           </a>
           <span ng-hide="order.time">
@@ -47,8 +50,8 @@
       <div ng-repeat="product in order.products">
 
         <span style="font-size:20px; margin-left:10px;">
-          {{order.name}}
-          {{order.price}}
+          {{product.name}}
+          {{product.price}}
         </span>
       </div>
 

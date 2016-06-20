@@ -55,7 +55,7 @@ router.param('product', function(req, res, next, id) {
 
 
 router.get('/orders/:order', function(req, res, next) {
-  req.form.populate('orders', function(err, order) {
+  req.order.populate('products', function(err, order) {
     if (err) { return next(err); }
     res.json(order);
   });
@@ -63,7 +63,7 @@ router.get('/orders/:order', function(req, res, next) {
 
 
 
-router.post('/orders/:order/orders', function(req, res, next) {
+router.post('/orders/:order/products', function(req, res, next) {
   var product = new Product(req.body);
   product.order = req.order;
 
@@ -74,7 +74,7 @@ router.post('/orders/:order/orders', function(req, res, next) {
     req.order.save(function(err, order) {
       if(err){ return next(err); }
 
-      res.json(order);
+      res.json(product);
     });
   });
 });

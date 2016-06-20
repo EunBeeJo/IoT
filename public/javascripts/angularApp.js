@@ -67,7 +67,7 @@ app.controller('MainCtrl', [
     $scope.orders = orders.orders;
     $scope.addPost = function(){
       if(!$scope.time || $scope.time === ''){
-        return ''
+        return ;
       }
       orders.create({
         time : $scope.time,
