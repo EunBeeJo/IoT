@@ -79,5 +79,12 @@ router.post('/orders/:order/products', function(req, res, next) {
   });
 });
 
+router.delete('/orders/:id', function(req, res, next){
+  Order.remove({ _id: req.params.id }, function(err, order){
+    if(err){ return next(err); }
+
+    res.json(order);
+  });
+});
 
 module.exports = router;
