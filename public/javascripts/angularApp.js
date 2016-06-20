@@ -3,7 +3,7 @@ var app = angular.module('smartCart', ['ui.router']);
 app.config([
   '$stateProvider',
   '$urlRouterProvider',
-  fuction($stateProvider, $urlRouterProvider) {
+  function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
       url: '/home',
