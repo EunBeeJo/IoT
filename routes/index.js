@@ -22,7 +22,7 @@ router.get('/orders', function(req, res, next) {
 router.post('/orders', function(req, res, next) {
   var order = new Order(req.body);
 
-  form.save(function(err, order){
+  order.save(function(err, order){
     if(err){ return next(err); }
 
     res.json(order);
